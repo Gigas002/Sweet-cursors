@@ -102,8 +102,10 @@ def read_aliases(cursors):
             if len(fields) != 2:
                 die(f"{where}: expected `ALIAS CURSOR`")
             alias, target = fields
-            if alias in cursors or alias in targets:
-                continue  # a cursor already, or listed before: skipped, as before
+            if alias in cursors:
+                die(f"{where}: {alias} is a cursor itself, not an alias")
+            if alias in targets:
+                die(f"{where}: {alias} is listed twice")
             targets[alias] = target
     resolved = {}
     for alias in targets:
