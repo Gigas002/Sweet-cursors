@@ -36,8 +36,8 @@ SRC = os.path.join(ROOT, "src")
 SVG = os.path.join(SRC, "cursors.svg")
 BUILD = os.path.join(ROOT, "build")
 
-# Cursor sizes in the XCursor theme.
-SIZES = [24, 36, 48]
+# Cursor sizes in the XCursor theme: the sizes GNOME and KDE offer, and Breeze's steps of 6.
+SIZES = [24, 30, 32, 36, 48, 60, 64, 72, 96]
 # The size at which the source rect (SIDE px) is drawn 1:1.
 NOMINAL = 24
 SIDE = 32
